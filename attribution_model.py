@@ -76,8 +76,9 @@ def linear_model(train_data, conv_col, channel_col, session_id):
 # original file in excel
 conv_file = 'Customerattributiondata_1.csv'
 cwd = os.getcwd()
-file_name = "test_data.csv"
-file_path = cwd + '\\' + file_name
+# create training file
+train_file = "test_data.csv"
+file_path = cwd + '\\' + train_file
 conv_path = cwd + "\\" + conv_file
 df = pd.read_csv(conv_file, sep='\t', error_bad_lines=False)
 header = ["CUSTOMERID",	"SESSIONID", "TIMESTAMP_TOUCHPOINT", "MARKETINGCHANNEL", "REVENUE"]
@@ -90,14 +91,10 @@ for index, row in df.iterrows():
     lines_to_csv.append(lines)
 
 np.savetxt(file_path, lines_to_csv, delimiter =",",fmt ='% s')
-# training file
-train_file = "test_data.csv"
 train_data = pd.read_csv(train_file)
-
-'''
 last_touch = last_touch_model(train_data, 'CONVERSION', 'MARKETINGCHANNEL')
-last_touch = last_non_direct_model(train_data, 'CONVERSION', 'MARKETINGCHANNEL', 'SESSIONID')
+last_non_direct = last_non_direct_model(train_data, 'CONVERSION', 'MARKETINGCHANNEL', 'SESSIONID')
 first_touch = first_touch_model(train_data, 'CONVERSION', 'MARKETINGCHANNEL', 'SESSIONID')
 linear = linear_model(train_data, 'CONVERSION', 'MARKETINGCHANNEL', 'SESSIONID')
-'''
+
 
