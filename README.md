@@ -1,4 +1,5 @@
 Attribution Modelling
+
 Our goal is to go through a set of channels of marketing campaigns before a customer converts. 
 
 Rule-Based Engine: Single-Touch Attribution Models
@@ -18,3 +19,7 @@ There might be a lot of biases involved in single-touch attribution models: 100%
 
 Linear Attribution Model
 The Linear Attribution Model gives each touchpoint across the buyer journey the same amount of credit toward driving a sale; it values every touchpoint evenly. This model is easy to implement and is better than all the single-touch attribution models. The disadvantage here is that in reality, consumers aren't equally impacted by every kind of channel.
+
+Pre requisites
+Python 3.8
+pandas 1.2.4
